@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = 'http://localhost:5000/api/donations';
+const API = "https://online-donation-platform-vnkj.onrender.com";
 
 export const saveDonation = async (donationData) => {
   const response = await axios.post(API, donationData);

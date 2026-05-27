@@ -1,24 +1,26 @@
-import { useEffect, useState } from 'react';
-import Navbar from '../components/Navbar';
-import toast from 'react-hot-toast';
-import '../App.css';
+import { useEffect, useState } from "react";
+import Navbar from "../components/Navbar";
+import toast from "react-hot-toast";
+import "../App.css";
 
 function ManageCauses() {
   const [causes, setCauses] = useState([]);
   const [editingCause, setEditingCause] = useState(null);
 
   const [form, setForm] = useState({
-    title: '',
-    category: '',
-    image: '',
-    description: '',
-    target: ''
+    title: "",
+    category: "",
+    image: "",
+    description: "",
+    target: "",
   });
 
   useEffect(() => {
     async function loadCauses() {
       try {
-        const res = await fetch('http://localhost:5000/api/causes');
+        const res = await fetch(
+          "https://online-donation-platform-vnkj.onrender.com/api/causes",
+        );
         const data = await res.json();
 
         setCauses(data);
@@ -32,7 +34,7 @@ function ManageCauses() {
 
   const fetchCauses = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/causes');
+      const res = await fetch("http://localhost:5000/api/causes");
       const data = await res.json();
 
       setCauses(data);
@@ -43,20 +45,20 @@ function ManageCauses() {
 
   const handleDelete = async (id) => {
     const confirmDelete = confirm(
-      'Are you sure you want to delete this cause?'
+      "Are you sure you want to delete this cause?",
     );
 
     if (!confirmDelete) return;
 
     try {
       await fetch(`http://localhost:5000/api/causes/${id}`, {
-        method: 'DELETE'
+        method: "DELETE",
       });
 
-      toast.success('Cause deleted successfully');
+      toast.success("Cause deleted successfully");
       fetchCauses();
     } catch (error) {
-      toast.error('Failed to delete cause');
+      toast.error("Failed to delete cause");
       console.log(error);
     }
   };
@@ -69,14 +71,14 @@ function ManageCauses() {
       category: cause.category,
       image: cause.image,
       description: cause.description,
-      target: cause.target
+      target: cause.target,
     });
   };
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -85,31 +87,31 @@ function ManageCauses() {
 
     try {
       await fetch(`http://localhost:5000/api/causes/${editingCause}`, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           ...form,
-          target: Number(form.target)
-        })
+          target: Number(form.target),
+        }),
       });
 
-      toast.success('Cause updated successfully');
+      toast.success("Cause updated successfully");
 
       setEditingCause(null);
 
       setForm({
-        title: '',
-        category: '',
-        image: '',
-        description: '',
-        target: ''
+        title: "",
+        category: "",
+        image: "",
+        description: "",
+        target: "",
       });
 
       fetchCauses();
     } catch (error) {
-      toast.error('Failed to update cause');
+      toast.error("Failed to update cause");
       console.log(error);
     }
   };

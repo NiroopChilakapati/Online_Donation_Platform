@@ -10,7 +10,9 @@ function AdminDonations() {
   useEffect(() => {
     const fetchDonations = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/donations");
+        const res = await fetch(
+          "https://online-donation-platform-vnkj.onrender.com/api/donations",
+        );
         const data = await res.json();
 
         setDonations(data);

@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = 'http://localhost:5000/api/causes';
+const API = "https://online-donation-platform-vnkj.onrender.com";
 
 export const getAllCauses = async () => {
   const response = await axios.get(API);

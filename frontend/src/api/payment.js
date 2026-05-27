@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = 'http://localhost:5000/api/payment';
+const API = "https://online-donation-platform-vnkj.onrender.com";
 
 export const createOrder = async (amount) => {
   const response = await axios.post(`${API}/create-order`, {
-    amount
+    amount,
   });
 
   return response.data;

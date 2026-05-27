@@ -14,7 +14,7 @@ function Profile() {
     const fetchDonations = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/donations/user/${user?.id}`,
+          `https://online-donation-platform-vnkj.onrender.com/api/donations/user/${user?.id}`,
         );
 
         const data = await res.json();
