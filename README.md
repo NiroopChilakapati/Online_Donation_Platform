@@ -2,6 +2,20 @@
 
 A full-stack MERN donation platform that allows users to donate to trusted causes, track donation history, and enables admins to manage donation campaigns.
 
+---
+
+## 🌐 Live Demo
+
+### Frontend (Live Website)
+
+🔗 https://online-donation-platform-two.vercel.app/
+
+### Backend API
+
+🔗 https://online-donation-platform-vnkj.onrender.com
+
+---
+
 ## 🚀 Features
 
 ### 👤 User Features
@@ -17,6 +31,7 @@ A full-stack MERN donation platform that allows users to donate to trusted cause
 - Profile Page
 - Toast Notifications
 - Loading Spinners
+- Responsive UI
 
 ### 🛠 Admin Features
 
@@ -26,6 +41,7 @@ A full-stack MERN donation platform that allows users to donate to trusted cause
 - Delete Causes
 - View All Donations
 - View Donor Details
+- Protected Admin Routes
 
 ### 💳 Payment Integration
 
@@ -42,6 +58,7 @@ A full-stack MERN donation platform that allows users to donate to trusted cause
 - React.js
 - Vite
 - React Router DOM
+- Axios
 - CSS
 - React Hot Toast
 
@@ -54,48 +71,62 @@ A full-stack MERN donation platform that allows users to donate to trusted cause
 
 ### Database
 
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 
 ### Payment
 
 - Razorpay API
 
+### Deployment
+
+- Vercel (Frontend)
+- Render (Backend)
+- MongoDB Atlas (Database)
+
 ---
 
 ## 📁 Project Structure
 
 ```bash
-online-donation-platform/
+Online_Donation_Platform/
 │
 ├── backend/
 │   ├── middleware/
 │   ├── models/
 │   ├── routes/
 │   ├── server.js
+│   ├── package.json
 │   └── .env
 │
 ├── frontend/
+│   ├── public/
 │   ├── src/
+│   │   ├── api/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── api/
-│   │   └── App.jsx
-│   └── vite.config.js
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   ├── vite.config.js
+│   └── vercel.json
 │
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Installation & Setup
 
 ### 1. Clone Repository
 
 ```bash
 git clone https://github.com/NiroopChilakapati/Online_Donation_Platform.git
+
 cd Online_Donation_Platform
 ```
+
+---
 
 ### 2. Install Dependencies
 
@@ -117,20 +148,23 @@ npm install
 
 ## 🔐 Environment Variables
 
-Create a `.env` file inside backend:
+Create a `.env` file inside `backend/`
 
 ```env
 PORT=5000
+
 MONGO_URI=your_mongodb_connection_string
+
 JWT_SECRET=your_secret_key
 
 RAZORPAY_KEY_ID=your_key_id
+
 RAZORPAY_KEY_SECRET=your_key_secret
 ```
 
 ---
 
-## ▶️ Run Project
+## ▶️ Run Project Locally
 
 ### Start Backend
 
@@ -148,48 +182,74 @@ npm run dev
 
 ---
 
-## 🌟 Screenshots
+## 🌍 Deployment Links
 
-Add screenshots of:
+### Frontend
 
-- Home Page
-- Causes Page
-- Login/Register
-- Dashboard
-- Admin Dashboard
-- Donation History
-- Profile Page
+https://online-donation-platform-two.vercel.app/
+
+### Backend API
+
+https://online-donation-platform-vnkj.onrender.com
 
 ---
 
-## 🔒 Authentication
+## 🔒 Authentication & Security
 
 - JWT Based Authentication
 - Protected Routes
 - Admin Route Protection
+- Token Expiry
 - Persistent Login
+- Password Hashing using bcryptjs
 
 ---
 
-## 📌 Future Improvements
+## 📌 Major Functionalities
+
+### Users
+
+- Register/Login
+- Browse Causes
+- Donate via Razorpay
+- View Donation History
+- Dashboard Access
+- Profile Management
+
+### Admin
+
+- Add Causes
+- Manage Causes
+- Delete Causes
+- View Donor Information
+- View Complete Donation History
+
+---
+
+## 🌟 Future Improvements
 
 - Email Notifications
 - Donation Receipts
 - Analytics Dashboard
 - Dark Mode
-- Real-Time Updates
+- Payment Success Email
+- User Profile Editing
+- Donation Certificates
 
 ---
 
 ## 👨‍💻 Author
 
-**Niroop Chilakapati**
+### Niroop Chilakapati
 
 GitHub:  
 https://github.com/NiroopChilakapati
+
+LinkedIn:  
+(Add your LinkedIn URL)
 
 ---
 
 ## ⭐ Support
 
-If you like this project, give it a ⭐ on GitHub!
+If you like this project, consider giving it a ⭐ on GitHub.
