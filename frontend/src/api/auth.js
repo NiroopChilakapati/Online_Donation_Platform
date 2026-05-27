@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "https://online-donation-platform-vnkj.onrender.com";
+const API = "https://online-donation-platform-vnkj.onrender.com/api/auth";
 
 export const registerUser = async (userData) => {
   const response = await axios.post(`${API}/register`, userData);

@@ -27,7 +27,7 @@ function AddCause() {
 
     try {
       const res = await fetch(
-        "https://online-donation-platform-vnkj.onrender.com/api/causes",
+        "https://online-donation-platform-vnkj.onrender.com",
         {
           method: "POST",
           headers: {
